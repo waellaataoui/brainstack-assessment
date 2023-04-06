@@ -1,0 +1,25 @@
+.bottomBar {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    box-shadow: 22px 1px 10px 17px rgba(0, 0, 0, 0.05);
+
+    a {
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .bottomBar {
+        display: flex;
+
+    }
+}

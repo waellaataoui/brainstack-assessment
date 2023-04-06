@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap');
+
+:root {}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+//responsive font size
+html {
+  font-size: 10px;
+
+  @media(min-width:2000px) {
+    font-size: 11px;
+  }
+}
+
+//container
+.container {
+  // padding: 0 20px;
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  //mobile
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+
+  //tablet
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+
+  @media (min-width: 1300px) {
+    width: 1300px;
+  }
+}
+
+.page-wrapper {
+  display: flex;
+}
