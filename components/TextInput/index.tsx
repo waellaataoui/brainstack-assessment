@@ -7,10 +7,10 @@ import styles from "./TextInput.module.scss";
 type inputProps = {
   label: String;
   options: Array<optionType>;
-  onSelect: Function;
-  onInputChange: Function;
-  loading: boolean;
-  error: String;
+  onSelect?: Function;
+  onInputChange?: Function;
+  loading?: boolean;
+  error?: String;
 };
 // this type can be extended to reuse the component with different options
 type optionType = locationType;
@@ -24,19 +24,19 @@ const TextInput = (props: inputProps) => {
     setIsComponentVisible(true);
     if (e.target.value || props.options.length > 0) return;
     else {
-      props.onInputChange("a");
+      props.onInputChange?.("a");
     }
   };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
   const handleOptionClick = (option: optionType) => {
-    props.onSelect(option);
+    props.onSelect?.(option);
     setValue(option.name);
     setIsComponentVisible(false);
   };
   const handleFetch = (input: String) => {
-    props.onInputChange(input);
+    props.onInputChange?.(input);
   };
   const debouncedFetch = useMemo(() => debounce(handleFetch, 500), []);
 

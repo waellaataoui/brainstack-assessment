@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useState } from "react";
 import Picker from "@/components/Picker";
+import TextInput from "@/components/TextInput";
 import styles from "@/styles/Home.module.scss";
 import fetchDestinations from "@/utils/fetchDestinations";
 import { locationType } from "@/utils/types";
