@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TextInput from "../TextInput";
-import styles from "./Picker.module.scss";
 type pickerProps = {
   label: String;
   onSelect: Function;
@@ -8,21 +7,23 @@ type pickerProps = {
 };
 const Picker = (props: pickerProps) => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<String>("");
   const [options, setOptions] = useState([]);
   const handleChange = async (value: String) => {
     setLoading(true);
+    setError("");
     // fetch options
     try {
       const _options = await props.fetchOptions(value);
       setOptions(_options);
     } catch (error) {
       console.log(error);
+      setError("couldn't fetch data");
     } finally {
       setLoading(false);
     }
   };
   const handleSelect = (value: any) => {
-    console.log(value);
     props.onSelect(value);
   };
   return (
@@ -32,6 +33,7 @@ const Picker = (props: pickerProps) => {
       options={options}
       loading={loading}
       onSelect={handleSelect}
+      error={error}
     ></TextInput>
   );
 };
