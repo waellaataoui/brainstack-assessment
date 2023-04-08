@@ -63,4 +63,13 @@ html {
 
 .page-wrapper {
   display: flex;
+
+  @media (max-width: 768px) {
+    height: 90vh;
+  }
+}
+
+.page-content {
+  width: 80%;
+  flex-grow: 1;
 }

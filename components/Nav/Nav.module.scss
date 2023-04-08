@@ -104,9 +104,11 @@
 
 @media(max-width:768px) {
     .nav {
+        position: relative;
+        z-index: 99;
 
         .logo {
-            z-index: 1;
+            z-index: 990;
         }
 
         #burger {
@@ -123,6 +125,7 @@
             background: black;
             flex-direction: column;
             align-items: center;
+            z-index: 99;
 
             li {
                 a {
@@ -161,6 +164,8 @@
 
             #burger {
                 fill: white;
+                z-index: 99;
+
             }
         }
     }
